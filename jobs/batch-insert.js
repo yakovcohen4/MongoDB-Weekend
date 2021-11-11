@@ -13,7 +13,7 @@ const studentsCollection = [
   {
     name: 'Ido',
     surName: 'Arbel',
-    birth: new Date(26 / 01 / 1998),
+    birth: new Date('1998-01-26'),
     phone: '0526305421',
     gender: 'Male',
     courses: ['Java', 'Math'],
@@ -21,7 +21,7 @@ const studentsCollection = [
   {
     name: 'Chen',
     surName: 'Halevi',
-    birth: new Date(11 / 03 / 1997),
+    birth: new Date('1997-03-11'),
     phone: '0526323421',
     gender: 'Male',
     courses: ['Math', 'Law'],
@@ -29,7 +29,7 @@ const studentsCollection = [
   {
     name: 'Koren',
     surName: 'Gan-or',
-    birth: new Date(19 / 01 / 1997),
+    birth: new Date('1997-01-19'),
     phone: '0526305321',
     gender: 'Male',
     courses: ['JavaScript', 'Finance', 'Law'],
@@ -37,7 +37,7 @@ const studentsCollection = [
   {
     name: 'Oryan',
     surName: 'Levy',
-    birth: new Date(02 / 04 / 1998),
+    birth: new Date('1998-04-02'),
     phone: '0542305321',
     gender: 'Male',
     courses: ['JavaScript', 'Law'],
@@ -45,7 +45,7 @@ const studentsCollection = [
   {
     name: 'Yahalom',
     surName: 'Cohen',
-    birth: new Date(03 / 11 / 1993),
+    birth: new Date('1993-11-03'),
     phone: '0542305392',
     gender: 'Female',
     courses: ['Java', 'Law'],
