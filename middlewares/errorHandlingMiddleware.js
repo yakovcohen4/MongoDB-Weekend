@@ -1,5 +1,5 @@
 const errorHandlingMiddleware = (error, req, res, next) => {
-  if (error.message === "no users found in db") {
+  if (error.message === 'no Student found in db') {
     return res.json({ error: error.message });
   }
 

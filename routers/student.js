@@ -1,6 +1,6 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const { listAllUsers, addNewUser } = require("../controller/user");
+const { listAllStudents, addNewStudent } = require('../controller/student');
 // middleware that is specific to this router
 // router.use(function timeLog(req, res, next) {
 //     console.log("Time: ", Date.now());
@@ -9,8 +9,8 @@ const { listAllUsers, addNewUser } = require("../controller/user");
 
 //
 // define the home page route
-router.get("/list/all", listAllUsers);
-router.post("/new", addNewUser);
+router.get('/list/all', listAllStudents);
+// router.post('/new', addNewStdudent);
 //
 
 module.exports = router;
