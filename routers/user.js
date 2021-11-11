@@ -1,6 +1,8 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const { listAllUsers, addNewUser } = require("../controller/user");
+const { listAllUsers } = require('../controller/user');
+const { listAllPosts, listAllPostsByAuthor } = reuiqre('../controller/post');
+const { listAllComments } = reuiqre('../controller/comment');
 // middleware that is specific to this router
 // router.use(function timeLog(req, res, next) {
 //     console.log("Time: ", Date.now());
@@ -9,8 +11,16 @@ const { listAllUsers, addNewUser } = require("../controller/user");
 
 //
 // define the home page route
-router.get("/list/all", listAllUsers);
-router.post("/new", addNewUser);
-//
+
+// user
+router.get('/list/all/users', listAllUsers);
+
+// post
+router.get('/list/all/posts', listAllPosts);
+router.get('/list/all/posts/:author', listAllPostsByAuthor);
+
+// comment
+router.get('/list/all/comments', listAllComments);
+// router.get('/list/all/comments/:author', listAllCommentsByAuthor);
 
 module.exports = router;
