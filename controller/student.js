@@ -85,20 +85,95 @@ exports.listStudentByPhone = async (req, res, next) => {
     next(error);
   }
 };
-// exports.addNewStudent = async (req, res, next) => {
-//   try {
-//     let { name, surName, birth, phone, gender, courses } = req.body;
-//     const newStudent = await User.create({
-//       name: name,
-//       surName: surName,
-//       birth: birth,
-//       phone: phone,
-//       gender: gender,
-//       courses: courses,
-//     });
-//     res.status(200).json(newStudent);
-//   } catch (error) {
-//     next(error);
-//   }
-// };
-//put all your user functions here :
+// ********* update *********
+// ********* update *********
+exports.updateCourse = async (req, res, next) => {
+  try {
+    console.log('updateCourse');
+    const { name, course } = req.body;
+    const updateStudentCourse = await Student.findOneAndUpdate({ name: name }, { $push: { courses: course } });
+    console.log(updateStudentCourse, 'updateCourse');
+    res.status(200).json(updateStudentCourse);
+
+    // this is what i assume you meant
+    if (updateStudentCourse.length === 0) next(new Error('no students found in db'));
+  } catch (error) {
+    next(error);
+  }
+};
+exports.updateBirth = async (req, res, next) => {
+  try {
+    console.log('updateBirth');
+    const { name, birth } = req.body;
+    const updateStudentBirth = await Student.findOneAndUpdate({ name: name }, { birth: birth });
+    console.log(updateStudentBirth, 'updateBirth');
+    res.status(200).json(updateStudentBirth);
+
+    // this is what i assume you meant
+    if (updateStudentBirth.length === 0) next(new Error('no students found in db'));
+  } catch (error) {
+    next(error);
+  }
+};
+
+// Text Search
+exports.listAllStudentsNameByLetter = async (req, res, next) => {
+  try {
+    console.log('listAllStudentsNameByLetter');
+    const { letter } = req.params;
+    const StudentListNameByLetter = await Student.find({ name: { $regex: letter } });
+    console.log(StudentListNameByLetter, 'listAllStudentsNameByLetter');
+    res.status(200).json(StudentListNameByLetter);
+
+    // this is what i assume you meant
+    if (StudentListNameByLetter.length === 0) next(new Error('no students found in db'));
+  } catch (error) {
+    next(error);
+  }
+};
+exports.listAllStudentssurNameByLetterOr = async (req, res, next) => {
+  try {
+    console.log('listAllStudentssurNameByLetterOr');
+    const { letter1, letter2 } = req.params;
+    const listStudentByTwoLetters = await Student.find({
+      $or: [{ surName: { $regex: letter1 } }, { surName: { $regex: letter2 } }],
+    });
+    console.log(listStudentByTwoLetters, 'listAllStudentssurNameByLetterOr');
+    res.status(200).json(listStudentByTwoLetters);
+
+    // this is what i assume you meant
+    if (listStudentByTwoLetters.length === 0) next(new Error('no students found in db'));
+  } catch (error) {
+    next(error);
+  }
+};
+
+// Delete Documents
+exports.deleteStudentByName = async (req, res, next) => {
+  try {
+    console.log('deleteStudentByName');
+    const { name } = req.params;
+    const deleteStudentByName = await Student.deleteOne({ name: name });
+    console.log(deleteStudentByName, 'deleteStudentByName');
+    res.status(200).json(deleteStudentByName);
+
+    // this is what i assume you meant
+    if (deleteStudentByName.length === 0) next(new Error('no students found in db'));
+  } catch (error) {
+    next(error);
+  }
+};
+exports.deleteStudentByBirth = async (req, res, next) => {
+  try {
+    console.log('deleteStudentByBirth');
+    const { birth } = req.params;
+    const deleteStudentByBirth = await Student.deleteOne({ birth: birth });
+    console.log(deleteStudentByBirth, 'deleteStudentByBirth');
+    res.status(200).json(deleteStudentByBirth);
+
+    // this is what i assume you meant
+    if (deleteStudentByBirth.length === 0) next(new Error('no students found in db'));
+  } catch (error) {
+    next(error);
+  }
+};

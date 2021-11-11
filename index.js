@@ -22,6 +22,7 @@ mongoose
   });
 
 app.use(morganBodyLogger);
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('working');
