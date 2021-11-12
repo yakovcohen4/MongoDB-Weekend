@@ -1,56 +1,59 @@
-# Backend tamplete
+# _Cyber4s_
 
-## _Cyber4s_
+### Topcis:
 
-This is a generic template for any backend project.
+1. Creating Databases & Collections using mongoose
+2. Create, Read, Update, Delete (CRUD) in MongoDB - Finding, Inserting, Deleting & Updating Elements
+3. Data Types - An Overview
+4. Query Selectors
+5. Schemas
 
--   Using the M.V.C method.
+## Task - branch
 
-## Features
+End product - Student information system database
 
--   we all starting any project with more or less the same lines of code.
--   This repo is gonna save us a few hours in total.
--   lets make it relevant and generic.
--   Its have a lot to improve, from English Grammer mistakes to Another Branch containing tamplate to a front project.
--   we have great power as we are 40 fullstack-developers, lets start to use it properly.
--   any one can add, even if its just an idea, write it down on "ideas for improve".
+- I connected to a mongo DB, and used a database named `mongo_practice`.
 
-## Instructions for use
+### Query / Find Documents:
 
--   0.Hit the green "use this tamplate" button.
--   1."npm init -y".
--   2."npm i".
--   3."git init".
--   4.Add ".env" file , and write down your environment variables there.
+query the `students` collection to
 
-## Instructions for improove this tamplate
+- get all students
+- get all students with name set to "Ido"
+- get all students where courses include "Law"
+- get all students where courses include "Java" and gender set to "Female"
+- get all students where birth > 05/05/1998
+- get all students where phone starts with 054
+- get all students where phone starts with 054
 
--   0.open new branch, work there.
--   1.make the changes
--   2.keep it clear, and generic.
--   3.keep in extandable.
--   4.comment where nessery.
--   5.ask for marge.
--   6.if its working please remove from the ideas list.
+### Update Documents
 
-## ideas for improve
+1. add a **JavaScript** course to the students where name set to "Yahalom"
+2. update the **birth** to **02/12/1998** where name set to "Koren"
 
-| Feature                | Discription                      |
-| ---------------------- | -------------------------------- |
-| Expand CRUD oparations | add delete , and update examples |
-| idia                   | Discription for this idea        |
-| idia                   | Discription for this idea        |
-| idia                   | Discription for this idea        |
-| idia                   | Discription for this idea        |
-| idia                   | Discription for this idea        |
-| idia                   | Discription for this idea        |
+### Text Search
 
-## Contributors
+1. find all students that have a name that contains the letter "o"
+2. find all students that have a surName that contains the letter "h" or "y"
 
--   Aviv Polak
--   Gavriel Frant
--   Ofer Klein
+### Delete Documents
 
-## License
+1. delete the student where name set to "Ido"
+1. delete the student where date set to "02/04/1998"
 
-Cyber4s
+## Relationships
+
+End product - Relationships information system database
+
+I connected to a mongo DB, and used a database named `mongo_practice`.
+
+### Querying related collections
+
+- find all users
+- find all posts
+- find all posts that was authored by "GoodGuyGreg"
+- find all posts that was authored by "ScumbagSteve"
+- find all comments
+- find all comments that was authored by "GoodGuyGreg"
+- find all comments that was authored by "ScumbagSteve"
+- find all comments belonging to the post "Reports a bug in your code"

@@ -34,11 +34,7 @@ exports.listAllCommentsByPost = async (req, res, next) => {
   try {
     console.log('listAllCommentsByPost');
     const { title } = req.params;
-    console.log('title ' + title);
     const post = await Post.find({ title: title });
-    console.log(post);
-    console.log(post[0]._id);
-
     const commentsListByPost = await Comment.find({ post: post[0]._id });
     console.log(commentsListByPost, 'listAllCommentsByPost');
     res.status(200).json(commentsListByPost);
