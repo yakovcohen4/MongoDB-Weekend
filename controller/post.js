@@ -17,8 +17,8 @@ exports.listAllPosts = async (req, res, next) => {
 exports.listAllPostsByAuthor = async (req, res, next) => {
   try {
     console.log('listAllPostsByAuthor');
-    const { username } = req.params;
-    const postsListByAuthor = await Post.find({ username: username });
+    const { author } = req.params;
+    const postsListByAuthor = await Post.find({ username: author });
     console.log(postsListByAuthor, 'listAllPostsByAuthor');
     res.status(200).json(postsListByAuthor);
 

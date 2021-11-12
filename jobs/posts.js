@@ -1,7 +1,7 @@
-const Students = require('../models/student');
+const Posts = require('../models/post');
 const mongoose = require('mongoose');
 mongoose
-  .connect(`mongodb+srv://********:********@cluster.ck0tp.mongodb.net/mongo_practice?retryWrites=true&w=majority`)
+  .connect(`mongodb+srv://********:*********@cluster.ck0tp.mongodb.net/mongo_practice?retryWrites=true&w=majority`)
   .then(result => {
     console.log('connected to MongoDB job');
   })
@@ -41,7 +41,7 @@ const postsData = [
     body: 'Sets to private',
   },
 ];
-Students.insertMany(postsData)
+Posts.insertMany(postsData)
   .then(function () {
     console.log('Data inserted'); // Success
   })

@@ -6,4 +6,4 @@ const PostsSchema = new mongoose.Schema({
   body: { type: String, required: true },
 });
 
-module.exports = mongoose.model('User', PostsSchema);
+module.exports = mongoose.model('Posts', PostsSchema);

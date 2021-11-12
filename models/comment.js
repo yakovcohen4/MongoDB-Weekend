@@ -6,4 +6,4 @@ const CommentsSchema = new mongoose.Schema({
   post: { type: Object, required: true },
 });
 
-module.exports = mongoose.model('User', CommentsSchema);
+module.exports = mongoose.model('Comments', CommentsSchema);
