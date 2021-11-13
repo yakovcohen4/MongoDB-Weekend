@@ -41,7 +41,7 @@ query the `students` collection to
 1. delete the student where name set to "Ido"
 1. delete the student where date set to "02/04/1998"
 
-## Relationships
+## Relationships - branch
 
 End product - Relationships information system database
 
@@ -57,3 +57,15 @@ I connected to a mongo DB, and used a database named `mongo_practice`.
 - find all comments that was authored by "GoodGuyGreg"
 - find all comments that was authored by "ScumbagSteve"
 - find all comments belonging to the post "Reports a bug in your code"
+
+## Bonus - branch
+
+End product - Job interview preparation questions system database
+
+### The server will include the following end points:
+
+2. GET /list - to list all the questions from our database
+3. PUT /update - to update a question by its default id we got from Mongo
+4. POST /create - to create a question
+5. DELETE /remove/:id - to delete a question by its id
+6. GET /read/by/difficulty/:difficulty - to list all question with that difficulty or above
